@@ -1,0 +1,23 @@
+:root {
+	--primary-color: #540d6e;
+	--dark-color: #1b2021;
+	--medium-color: #ccc9a1;
+	--brown-color: #a53f2b;
+	--light-color: #f0ffce;
+}
+
+.rectangle-card {
+	display: inline-block;
+	background: linear-gradient(var(--light-color), var(--medium-color));
+	color: var(--dark-color);
+	padding: 4rem 4rem;
+	font-size: 3rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 4rem;
+	cursor: pointer;
+	margin: 3rem 4rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+	text-transform: uppercase;
+}

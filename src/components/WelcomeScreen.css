@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,600|Montserrat:400,600&display=swap');
+
+:root {
+	--primary-color: #540d6e;
+	--dark-color: #1b2021;
+	--medium-color: #ccc9a1;
+	--brown-color: #a53f2b;
+	--light-color: #f0ffce;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
