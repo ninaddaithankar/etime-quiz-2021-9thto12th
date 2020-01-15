@@ -8,15 +8,18 @@ import Question from './components/mcq/Question';
 import NoMatch from './components/NoMatch';
 import RapidFireQuestion from './components/rapidfire/RapidFireQuestion';
 import RapidFireAnswer from './components/rapidfire/RapidFireAnswer';
+import MixedBagQuestion from './components/mixedbag/MixedBagQuestion';
 
 function App() {
 	return (
 		<Router>
 			<div className='App'>
 				<Switch>
+					{/* Initial Routes */}
 					<Route exact path='/' component={Welcome} />
 					<Route exact path='/main' component={Main} />
 
+					{/* Take-Your-Pick Routes */}
 					<Route
 						exact
 						path='/main/teams'
@@ -34,6 +37,10 @@ function App() {
 						component={Question}
 					/>
 
+					{/* Mixed-Bag Routes */}
+					<Route exact path='/main/test' component={MixedBagQuestion} />
+
+					{/* Rapid-Fire Routes */}
 					<Route
 						exact
 						path='/main/rapidfire'
@@ -45,13 +52,11 @@ function App() {
 							/>
 						)}
 					/>
-
 					<Route
 						exact
 						path='/main/rapidfire/answers/:choice_no'
 						component={RapidFireAnswer}
 					/>
-
 					<Route
 						exact
 						path='/main/rapidfire/question/:choice_no'

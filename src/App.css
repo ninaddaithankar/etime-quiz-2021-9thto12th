@@ -497,3 +497,37 @@ body {
 	outline: none;
 	text-transform: uppercase;
 }
+
+.btn-correct-answer {
+	font-family: Cardo;
+	display: inline-block;
+	background: linear-gradient(var(--light-color), yellow);
+	color: var(--dark-color);
+	width: 38vw;
+	padding: 3rem 8rem;
+	font-size: 2.5rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 4rem;
+	cursor: pointer;
+	margin: 1rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+}
+
+.btn-incorrect-answer {
+	font-family: Cardo;
+	display: inline-block;
+	background: linear-gradient(var(--light-color), red);
+	color: var(--dark-color);
+	width: 38vw;
+	padding: 3rem 8rem;
+	font-size: 2.5rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 4rem;
+	cursor: pointer;
+	margin: 1rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+}

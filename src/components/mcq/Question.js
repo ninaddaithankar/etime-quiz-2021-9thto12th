@@ -5,16 +5,37 @@ import QuestionBox from '../layout/QuestionBox';
 import Title from '../layout/Title';
 import Timer from '../layout/Timer';
 
+import { questions } from './McqQuestions';
+
 class Question extends Component {
 	state = {
-		group_no: 1,
-		question:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. In sapiente consequatur odit libero nostrum.',
-		options: [],
+		choice_no: 0,
+		group_no: 0,
+		question_no: 0,
+		optionA: '2',
+		optionB: '2',
+		optionC: '2',
+		optionD: '2',
+		option_choice_no: 0,
 		options_visible: false,
-		choice_no: this.props.match.params.choice_no,
 		time: 25
 	};
+
+	componentDidMount() {
+		this.setState({
+			choice_no: this.props.match.params.choice_no - 1,
+			group_no: 0,
+			question_no: 0,
+			options_visible: false,
+			time: 25
+		});
+	}
+
+	componentWillUnmount() {
+		if (this.timerId) {
+			clearInterval(this.timerId);
+		}
+	}
 
 	startTimer = () => {
 		this.timerId = setInterval(() => this.tick(), 1000);
@@ -42,16 +63,115 @@ class Question extends Component {
 		this.startTimer();
 	};
 
+	nextQuestion = () => {
+		if (this.timerId) {
+			clearInterval(this.timerId);
+		}
+		this.setState({
+			time: 25,
+			options_visible: false,
+			optionA: '2',
+			optionB: '2',
+			optionC: '2',
+			optionD: '2',
+			option_choice_no: 0
+		});
+		if (this.state.question_no < 1) {
+			this.setState({
+				question_no: this.state.question_no + 1
+			});
+		} else if (this.state.group_no < 2) {
+			this.setState({
+				question_no: 0,
+				group_no: this.state.group_no + 1
+			});
+		}
+	};
+
+	checkAnswer = e => {
+		if (this.state.option_choice_no < 2) {
+			if (
+				e.target.value ===
+				questions[this.state.choice_no][this.state.group_no][
+					this.state.question_no
+				].answer
+			) {
+				this.setState({
+					[e.target.name]: '1'
+				});
+				if (this.timerId) {
+					clearInterval(this.timerId);
+				}
+			} else {
+				if (this.state.option_choice_no === 1) {
+					this.displayCorrectOption();
+				}
+
+				this.setState({
+					[e.target.name]: '0'
+				});
+			}
+		}
+		this.setState({
+			option_choice_no: this.state.option_choice_no + 1
+		});
+	};
+
+	displayCorrectOption = () => {
+		if (this.timerId) {
+			clearInterval(this.timerId);
+		}
+		const temp_optionA = document.getElementsByName('optionA');
+		const temp_optionB = document.getElementsByName('optionB');
+		const temp_optionC = document.getElementsByName('optionC');
+		const temp_optionD = document.getElementsByName('optionD');
+		const correct_answer =
+			questions[this.state.choice_no][this.state.group_no][
+				this.state.question_no
+			].answer;
+		if (temp_optionA[0].value === correct_answer) {
+			this.setState({
+				optionA: '1'
+			});
+		} else if (temp_optionB[0].value === correct_answer) {
+			this.setState({
+				optionB: '1'
+			});
+		} else if (temp_optionC[0].value === correct_answer) {
+			this.setState({
+				optionC: '1'
+			});
+		} else if (temp_optionD[0].value === correct_answer) {
+			this.setState({
+				optionD: '1'
+			});
+		}
+	};
+
 	render() {
+		const {
+			group_no,
+			choice_no,
+			question_no,
+			optionA,
+			optionB,
+			optionC,
+			optionD
+		} = this.state;
+		const [optionTextA, optionTextB, optionTextC, optionTextD] = questions[
+			choice_no
+		][group_no][question_no].options;
 		return (
 			<div className='all-center'>
 				<Title
-					style={{ marginTop: '2.5vh', fontSize: '1.7rem' }}
-					text={`Group ${this.state.group_no}`}
+					style={{ marginTop: '4vh', fontSize: '1.7rem' }}
+					text={`Group ${group_no + 1}`}
 					backLink='/main/teams'
 					showBack={false}
 				/>
-				<QuestionBox question={this.state.question} />
+				<QuestionBox
+					question={questions[choice_no][group_no][question_no].question}
+				/>
 				<div className='inline-grid-9'>
 					<Link to='/main/teams' style={{ color: 'white' }}>
 						<i
@@ -76,6 +196,7 @@ class Question extends Component {
 							marginTop: '5vh',
 							cursor: 'pointer'
 						}}
+						onClick={this.nextQuestion}
 					></i>
 				</div>
 				{!this.state.options_visible && (
@@ -83,6 +204,7 @@ class Question extends Component {
 						style={{
 							fontFamily: 'Montserrat',
 							fontSize: '2rem',
+							fontWeight: 'bold',
 							marginTop: '4vh',
 							height: '35vh',
 							cursor: 'pointer'
@@ -95,10 +217,62 @@ class Question extends Component {
 				)}
 				{this.state.options_visible && (
 					<div className='grid-2 large' style={{ marginTop: '1vh' }}>
-						<button className='option-button'>Option 1</button>
-						<button className='option-button'>Option 2</button>
-						<button className='option-button'>Option 3</button>
-						<button className='option-button'>Option 4</button>
+						<button
+							name='optionA'
+							className={
+								optionA === '2'
+									? 'option-button'
+									: optionA === '1'
+									? 'btn-correct-answer'
+									: 'btn-incorrect-answer'
+							}
+							onClick={this.checkAnswer}
+							value={optionTextA}
+						>
+							{optionTextA}
+						</button>
+						<button
+							name='optionB'
+							className={
+								optionB === '2'
+									? 'option-button'
+									: optionB === '1'
+									? 'btn-correct-answer'
+									: 'btn-incorrect-answer'
+							}
+							onClick={this.checkAnswer}
+							value={optionTextB}
+						>
+							{optionTextB}
+						</button>
+						<button
+							name='optionC'
+							className={
+								optionC === '2'
+									? 'option-button'
+									: optionC === '1'
+									? 'btn-correct-answer'
+									: 'btn-incorrect-answer'
+							}
+							onClick={this.checkAnswer}
+							value={optionTextC}
+						>
+							{optionTextC}
+						</button>
+						<button
+							name='optionD'
+							className={
+								optionD === '2'
+									? 'option-button'
+									: optionD === '1'
+									? 'btn-correct-answer'
+									: 'btn-incorrect-answer'
+							}
+							onClick={this.checkAnswer}
+							value={optionTextD}
+						>
+							{optionTextD}
+						</button>
 					</div>
 				)}
 			</div>
