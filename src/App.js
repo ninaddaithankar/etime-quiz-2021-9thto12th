@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import '../node_modules/video-react/dist/video-react.css';
 import Welcome from './components/Welcome';
 import Main from './components/Main';
 import TeamSelection from './components/mcq/TeamSelection';
@@ -9,6 +10,10 @@ import NoMatch from './components/NoMatch';
 import RapidFireQuestion from './components/rapidfire/RapidFireQuestion';
 import RapidFireAnswer from './components/rapidfire/RapidFireAnswer';
 import MixedBagQuestion from './components/mixedbag/MixedBagQuestion';
+import MixedBagTeamSelection from './components/mixedbag/MixedBagTeamSelection';
+import DoubleTroubleTeamSelection from './components/doubletrouble/DoubleTroubleTeamSelection';
+import AudioQuestion from './components/doubletrouble/AudioQuestion';
+import VideoQuestion from './components/doubletrouble/VideoQuestion';
 
 function App() {
 	return (
@@ -38,7 +43,33 @@ function App() {
 					/>
 
 					{/* Mixed-Bag Routes */}
-					<Route exact path='/main/test' component={MixedBagQuestion} />
+					<Route
+						exact
+						path='/main/mixedbag'
+						component={MixedBagTeamSelection}
+					/>
+					<Route
+						exact
+						path='/main/mixedbag/question/:choice_no'
+						component={MixedBagQuestion}
+					/>
+
+					{/* Double Trouble Routes */}
+					<Route
+						exact
+						path='/main/double'
+						component={DoubleTroubleTeamSelection}
+					/>
+					<Route
+						exact
+						path='/main/double/audioquestion/:choice_no'
+						component={AudioQuestion}
+					/>
+					<Route
+						exact
+						path='/main/double/videoquestion/:choice_no'
+						component={VideoQuestion}
+					/>
 
 					{/* Rapid-Fire Routes */}
 					<Route

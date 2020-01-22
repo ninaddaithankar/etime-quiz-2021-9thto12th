@@ -21,3 +21,9 @@
 	outline: none;
 	text-transform: uppercase;
 }
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+	outline: none;
+}

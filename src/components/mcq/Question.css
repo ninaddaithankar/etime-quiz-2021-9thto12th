@@ -10,7 +10,7 @@
 
 .round-timer {
 	width: 8rem;
-	padding: 1.5rem 2rem;
+	padding: 2rem 2rem;
 	font-size: 2.8rem;
 	border: 1.5px solid white;
 	border-radius: 50%;
@@ -43,4 +43,10 @@
 	padding: 2rem 8rem;
 	border: 1px solid white;
 	border-radius: 4rem;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+	outline: none;
 }

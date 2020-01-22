@@ -1,68 +1,262 @@
+//Note : I have assumed that each round contains 10 questions each. If the count is more than 10, please add brackets as per requirement.
+
 export const questions = [
 	//For 1st choice
 	[
 		{
-			question:
-				'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi voluptates obcaecati ipsa inventore asperiores eos laborum!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
 		}
 	],
 	//For 2nd choice
 	[
 		{
-			question:
-				'1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'3. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
 		},
 		{
-			question:
-				'4. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, nihil!',
-			answer: 'Deustche Gracia'
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		}
+	],
+	//For 3rd choice
+	[
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		}
+	],
+	//For 4th choice
+	[
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		}
+	],
+	//For 5th choice
+	[
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		}
+	],
+	//For 6th choice
+	[
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
+		},
+		{
+			question: '',
+			answer: ''
 		}
 	]
 ];

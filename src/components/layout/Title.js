@@ -12,7 +12,8 @@ const Title = props => {
 						color: 'white',
 						gridColumnStart: 1,
 						gridColumnEnd: 2,
-						margin: '0rem 1rem'
+						margin: '0rem 1rem',
+						fontSize: '2rem'
 					}}
 				>
 					<i
@@ -20,7 +21,7 @@ const Title = props => {
 						style={{
 							float: 'left',
 							fontSize: props.style.fontSize,
-							padding: '0.8rem'
+							padding: '0.5rem'
 						}}
 					></i>
 				</Link>
@@ -31,7 +32,8 @@ const Title = props => {
 					gridColumnStart: 3,
 					gridColumnEnd: 8,
 					width: '40vw',
-					textTransform: 'uppercase'
+					textTransform: 'uppercase',
+					fontWeight: 'bold'
 				}}
 			>
 				{props.text}

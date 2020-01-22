@@ -8,9 +8,11 @@ const Timer = props => {
 				gridColumnStart: '5',
 				gridColumnEnd: '6',
 				marginTop: '3vh',
+				fontWeight: 'bold',
 				...props.style
 			}}
-			onChange={props.updateTimer}
+			// onChange={props.updateTimer}
+			onClick={props.startTimer}
 		>
 			{props.time}
 		</h1>

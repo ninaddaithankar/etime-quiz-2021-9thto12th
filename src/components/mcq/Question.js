@@ -216,7 +216,10 @@ class Question extends Component {
 					</button>
 				)}
 				{this.state.options_visible && (
-					<div className='grid-2 large' style={{ marginTop: '1vh' }}>
+					<div
+						className='grid-2 large'
+						style={{ marginTop: '1vh', border: 'none' }}
+					>
 						<button
 							name='optionA'
 							className={
