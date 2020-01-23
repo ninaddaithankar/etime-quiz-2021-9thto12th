@@ -25,6 +25,7 @@ const MixedBagQuestion = props => {
 		let interval = null;
 		if (isActive && time === 0) {
 			clearInterval(interval);
+			setTimeUp();
 		} else if (isActive) {
 			interval = setInterval(() => {
 				setTime(time => time - 1);
@@ -33,7 +34,14 @@ const MixedBagQuestion = props => {
 		return () => {
 			clearInterval(interval);
 		};
+		//eslint-disable-next-line
 	}, [isActive, time]);
+
+	const setTimeUp = () => {
+		if (time === 0) {
+			document.getElementById('title_box').innerHTML = 'TIME UP';
+		}
+	};
 
 	return (
 		<div className='all-center'>
@@ -64,14 +72,14 @@ const MixedBagQuestion = props => {
 			</div>
 			<div style={{ marginTop: '7vh' }}>
 				<button
-					className='btn'
+					className='btn capital'
 					style={{ paddingLeft: '3.2rem', paddingRight: '3.2rem' }}
 					onClick={() => showModal('Clue', questions[choice].clue)}
 				>
 					Clue
 				</button>
 				<button
-					className='btn'
+					className='btn capital'
 					style={{ marginLeft: '2vw' }}
 					onClick={() => showModal('Answer', questions[choice].answer)}
 				>

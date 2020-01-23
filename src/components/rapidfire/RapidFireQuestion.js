@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Timer from '../layout/Timer';
 import QuestionBox from '../layout/QuestionBox';
 import { questions } from './RapidFireQuestions';
+import { Link } from 'react-router-dom';
 
 class RapidFireQuestion extends Component {
 	state = {
-		time: 30,
+		time: 60,
 		choice: this.props.match.params.choice_no - 1,
-		question_no: 0
+		question_no: 0,
+		showAnswers: false
 	};
 
 	componentDidMount() {
@@ -20,6 +22,7 @@ class RapidFireQuestion extends Component {
 		});
 		if (this.state.time === 0) {
 			clearInterval(this.timerId);
+			this.setTimeUp();
 		}
 	};
 
@@ -36,8 +39,16 @@ class RapidFireQuestion extends Component {
 				question_no: this.state.question_no + 1
 			});
 		} else {
-			this.props.history.push(`/main/rapidfire/answers/${this.state.choice}`);
+			document.getElementById('question_box').innerHTML =
+				'Congrats!<br>You completed all questions in time!';
+			if (this.timerId) clearInterval(this.timerId);
+			this.setState({ showAnswers: true });
 		}
+	};
+
+	setTimeUp = () => {
+		document.getElementById('question_box').innerHTML = 'TIME UP!';
+		this.setState({ showAnswers: true });
 	};
 
 	render() {
@@ -49,17 +60,39 @@ class RapidFireQuestion extends Component {
 					style={{ marginTop: '7vh', height: '45vh' }}
 					question={questions[choice][question_no].question}
 				/>
-				<i
-					className='fa fa-chevron-circle-right'
-					style={{
-						fontSize: '6rem',
-						gridColumnStart: '9',
-						gridColumnEnd: '10',
-						marginTop: '10vh',
-						cursor: 'pointer'
-					}}
-					onClick={this.nextQuestion}
-				/>
+				{this.state.showAnswers && (
+					<Link
+						to={{
+							pathname: `/main/rapidfire/answers/${this.state.choice}`,
+							state: { questionCount: this.state.question_no }
+						}}
+					>
+						<i
+							className='fa fa-chevron-circle-right'
+							style={{
+								color: 'white',
+								fontSize: '6rem',
+								gridColumnStart: '9',
+								gridColumnEnd: '10',
+								marginTop: '10vh',
+								cursor: 'pointer'
+							}}
+						/>
+					</Link>
+				)}
+				{!this.state.showAnswers && (
+					<i
+						className='fa fa-chevron-circle-right'
+						style={{
+							fontSize: '6rem',
+							gridColumnStart: '9',
+							gridColumnEnd: '10',
+							marginTop: '10vh',
+							cursor: 'pointer'
+						}}
+						onClick={this.nextQuestion}
+					/>
+				)}
 			</div>
 		);
 	}

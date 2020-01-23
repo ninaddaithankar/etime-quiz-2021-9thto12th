@@ -1,262 +1,391 @@
-//Note : I have assumed that each round contains 10 questions each. If the count is more than 10, please add brackets as per requirement.
+//Note : We have kept 15 questions for a safer side. The number of questions they answer in 1 min, will be considered.
 
 export const questions = [
 	//For 1st choice
 	[
 		{
-			question: '',
-			answer: ''
+			question: '1. Scurvy  is caused by the deficiency of Vitamin _____',
+			answer: 'Vitamin C'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '2. Capital of Iran',
+			answer: 'Tehran'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '3. Spell the word Surveillance',
+			answer: 'Surveillance'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '4. S.I. Unit of Luminous Intensity',
+			answer: 'Candella'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '5. Author of the Book ‘How I taught my grandmother to read’',
+			answer: 'Sudha Murthy'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '6.World Population Day is celebrated on',
+			answer: '11 July'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '7.Bal Gangadhar Tilak started a marathi newspaper called',
+			answer: 'Kesari'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '8.Number of strings in Violin',
+			answer: '4'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '9. Full form of ILO',
+			answer: 'International Labour Organization'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '10. Square of 0.4 is',
+			answer: '0.16'
+		},
+		{
+			question: '11.Invader who carried Kohinoor from India',
+			answer: 'Nadir Shah'
+		},
+		{
+			question: '12. Grammy awards are given for excellence in',
+			answer: 'Music'
+		},
+		{
+			question:
+				'13. Freedom fighter who gave the slogan ‘ Inquilab Zindabad’ was',
+			answer: 'Bhagat Singh'
+		},
+		{
+			question: '14. Currency of Japan',
+			answer: 'Yen'
+		},
+
+		{
+			question: '15. Second largest flightless bird',
+			answer: 'Emu'
 		}
 	],
 	//For 2nd choice
 	[
 		{
-			question: '',
-			answer: ''
+			question: '1.Founder of Anandwan',
+			answer: 'Baba Amte'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '2. 3 Kilograms = _______ Decagrams',
+			answer: '300'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '3. Doctor who specializes in skin care is called',
+			answer: 'Dermatologist'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '4. A piece of fertile land in a desert is called',
+			answer: 'Oasis'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '5.Author of the book ‘The Alchemist’',
+			answer: 'Paulo Coelho'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '6.Place where India conducts its nuclear tests',
+			answer: 'Pokhran'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '7.Winner of Rajiv Gandhi Khel Ratna Award 2019 is',
+			answer: 'Virat Kohli / Mirabai Chanu'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '8. Full form of PETA is',
+			answer: 'People for Ethical Treatment of Animals'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '9.International Yoga Day is celebrated on',
+			answer: '21st June'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '10. The activist also known as ‘Loknayak’',
+			answer: 'Jayaprakash Narayan'
+		},
+		{
+			question:
+				'11. The line which intersects a circle in two distinct points is called',
+			answer: 'Secant'
+		},
+		{
+			question: '12. The Everest of Maharashtra',
+			answer: 'Kalsubai Shikhar'
+		},
+		{
+			question: '13. Currency of Canada',
+			answer: 'Dollar'
+		},
+		{
+			question: '14. Place where Golconda Fort is situated in India',
+			answer: 'Hyderabad'
+		},
+
+		{
+			question: '15. ‘Biopic’ is the combination of which 2 words',
+			answer: 'Biographical + Picture'
 		}
 	],
 	//For 3rd choice
 	[
 		{
-			question: '',
-			answer: ''
+			question: '1. A person who studies Maps',
+			answer: 'Cartographer'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '2. Unit for Electric charge is',
+			answer: 'Coulomb'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '3. Chemical name of Vitamin B1',
+			answer: 'Thiamine'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '4. Founder of Brahmo Samaj',
+			answer: 'Raja Ram Mohan Roy'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '5. Full form of ATM',
+			answer: 'Automated Teller Machine'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '6. Author of the book ‘Who will cry when you die’ is',
+			answer: 'Robin Sharma'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '7. Each degree on a map is equal to ______ minutes',
+			answer: '60'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '8. Formula for an Equilateral Triangle',
+			answer: '√3/4 Side2 / √3/4 a2'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '9. First Governor General of Independent India',
+			answer: 'C.Rajagopalachari'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '10. Currency of Germany',
+			answer: 'Euro'
+		},
+		{
+			question: '11.First fort captured by Shivaji Maharaj was',
+			answer: 'Torna Fort / Prachandgad'
+		},
+		{
+			question: '12.Type of mirror used by E.N.T. specialist',
+			answer: 'Concave'
+		},
+		{
+			question: '13.Current president of India',
+			answer: 'Ramnath Kovind'
+		},
+		{
+			question: '14.‘Wireless’ is the combination of which 2 words',
+			answer: 'Wireless + Fidelity'
+		},
+		{
+			question: '15.Winner of ‘Bharat Ratna’ in 2019',
+			answer: 'Bhupen Hazarika / Pranab Mukherjee/ Nanaji Deshmukh'
 		}
 	],
 	//For 4th choice
 	[
 		{
-			question: '',
-			answer: ''
+			question: '1.Instrument used to record the growth of plants is called',
+			answer: 'Crescograph'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '2.A person who studies rocks is called',
+			answer: 'Geologist'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '3.Earthworm respires through skin True/False?',
+			answer: 'True'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '4.The Hornbill festival is celebrated in which state',
+			answer: 'Arunachal Pradesh'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '5.Factors of (x^2- 169)',
+			answer: '(x + 13) (x - 13)'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '6.Author of the book ‘A century is  not enough’ is',
+			answer: 'Sourav Ganguly'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '7.Father of India’s White Revolution is',
+			answer: 'Varghese Kurien'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '8.Gas also known as ‘Marsh Gas’ is',
+			answer: 'Methane'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '9.The piece that can jump over other pieces in chess is',
+			answer: 'Knight'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '10. Capital of Bangladesh is',
+			answer: 'Dhaka'
+		},
+		{
+			question: '11.International Court of Justice is located in',
+			answer: 'Netherlands/Hague'
+		},
+		{
+			question: '12. Full form of HIV is',
+			answer: 'Human Immunodeficiency VIrus'
+		},
+		{
+			question: '13.Daulatabad fort located in which district',
+			answer: 'Aurangabad'
+		},
+		{
+			question: '14.Present Chief Minister of Maharashtra is',
+			answer: 'Udhhav Thakare'
+		},
+		{
+			question: '15. The plural of radius is',
+			answer: 'Radii'
 		}
 	],
 	//For 5th choice
 	[
 		{
-			question: '',
-			answer: ''
+			question: '1.The suffix in the word ‘Uncomfortable’ is',
+			answer: 'Able'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '2.Vitamin D is a fat soluble or Water soluble vitamin?',
+			answer: 'Fat Soluble'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '3.The person who studies weather is called',
+			answer: 'Meteorologist'
 		},
 		{
-			question: '',
-			answer: ''
+			question:
+				'4.If Selling price is more than the cost price, it is called Loss: True / False',
+			answer: 'False'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '5.Full form of CNG is',
+			answer: 'Compressed Natural Gas'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '6.The capital of Greece is',
+			answer: 'Athens'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '7.The highest peak in India',
+			answer: 'Kanchenjunga'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '8.The place where soldiers live is called',
+			answer: 'Barrack'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '9.Guinea pig is a species of Pig : True or False ',
+			answer: 'False'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '10.The author of the book ‘The race of my life’ is',
+			answer: 'Milkha Singh'
+		},
+		{
+			question:
+				'11. Sanctuary that preserves the endangered species of One horned Rhino in India is',
+			answer: 'Kaziranga Wildlife Sanctuary'
+		},
+		{
+			question: '12. Golden Girl of India is a nickname of',
+			answer: 'P.T.Usha'
+		},
+		{
+			question: '13.Father of Genetics is',
+			answer: 'Gregor Mendel'
+		},
+		{
+			question:
+				'14.Marathi dramatic narration praising  heroic deeds are called',
+			answer: 'Powada'
+		},
+		{
+			question: '15.Surface area of sphere is',
+			answer: '4πr2'
 		}
 	],
 	//For 6th choice
 	[
 		{
-			question: '',
-			answer: ''
+			question: '1.Acid mainly found in milk is',
+			answer: 'Lactic Acid'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '2.Who designed the Indian flag?',
+			answer: 'Pingalli Venkayya'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '3.Olympic games originated in',
+			answer: 'Greece'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '4.The mountain ranges known as ‘Abode of Snow’ are',
+			answer: 'Himalayas'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '5.Capital of Sri Lanka is',
+			answer: 'Colombo'
 		},
 		{
-			question: '',
-			answer: ''
+			question:
+				'6. If market value of share is greater than the face value, share is at ____ ',
+			answer: 'Premium'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '7.Author of the book ‘India 2020’ is',
+			answer: 'Dr. A.P.J Abdul Kalam'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '8.If GST on certain goods is 18%, what is the CGST?',
+			answer: '9%'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '9.Full form of PNR is _______',
+			answer: 'Passenger Name Record'
 		},
 		{
-			question: '',
-			answer: ''
+			question: '10. Study of sound is called ______ ',
+			answer: 'Acoustics'
+		},
+		{
+			question: '11. Aga khan Cup is related to which sport',
+			answer: 'Hockey'
+		},
+		{
+			question: '12. Helpline number for Police Control Room India is',
+			answer: '100'
+		},
+		{
+			question:
+				'13.In 2019, Wing Commander Abhinandan was awarded with which award',
+			answer: 'Vir Chakra'
+		},
+		{
+			question: '14.Prince of Wales Museum is now known as',
+			answer: ' Chhatrapati Shivaji Maharaj Vastu Sangrahalay '
+		},
+		{
+			question: '15. Pongal festival is celebrated in which state',
+			answer: 'Tamil Nadu'
 		}
 	]
 ];

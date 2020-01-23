@@ -19,8 +19,6 @@ const AudioQuestion = props => {
 	const [time, setTime] = useState(25);
 	const [isActive, setIsActive] = useState(false);
 	const [playing, setPlaying] = useState(false);
-	// const [currentTime, setCurrentTime] = useState('0:00');
-	const [duration, setDuration] = useState('');
 	const showModal = (title, body) => {
 		setModalText({ title, body });
 		setModalShow(true);
@@ -36,7 +34,6 @@ const AudioQuestion = props => {
 			audioplayer.src = audio[choice];
 			audioplayer.play();
 			setPlaying(true);
-			setDuration(audioplayer.duration);
 			audioplayer.addEventListener('ended', audioStopped);
 		}
 	};
@@ -50,9 +47,6 @@ const AudioQuestion = props => {
 		if (playing) {
 			audioplayer.pause();
 			setPlaying(false);
-			console.log(audioplayer.currentTime);
-			console.log(audioplayer.duration);
-			console.log(duration);
 		}
 	};
 
@@ -135,18 +129,6 @@ const AudioQuestion = props => {
 						onClick={playAudio}
 					/>
 				)}
-				{/* <div
-					style={{
-						margin: 'auto',
-						fontSize: '3rem',
-						gridColumn: '2 / span 2',
-
-						padding: '1rem',
-						width: '17vw'
-					}}
-				>
-					0:00 / {duration}
-				</div> */}
 			</div>
 			<CustomModal
 				titletext={modalText.title}

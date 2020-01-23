@@ -9,15 +9,14 @@ const SingleAnswer = props => {
 				style={{
 					fontFamily: 'Cardo',
 					fontSize: '1.5rem',
-					marginTop: '1rem',
 					borderTop: '1px dotted white',
-					padding: '1rem'
+					padding: '0.5rem'
 				}}
 			>
 				<span
 					style={{
 						gridColumnStart: '1',
-						gridColumnEnd: '10',
+						gridColumnEnd: '8',
 						textAlign: 'left'
 					}}
 				>
@@ -28,7 +27,7 @@ const SingleAnswer = props => {
 				</span>
 				<span
 					style={{
-						gridColumnStart: '11',
+						gridColumnStart: '9',
 						gridColumnEnd: '13'
 					}}
 				>

@@ -22,7 +22,7 @@ const Welcome = () => {
 					<br />
 				</span>
 			</div>
-			<Link to='/main' className='btn' style={{ marginTop: '20vh' }}>
+			<Link to='/main' className='btn capital' style={{ marginTop: '20vh' }}>
 				Start
 			</Link>
 		</div>

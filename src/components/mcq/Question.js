@@ -47,6 +47,7 @@ class Question extends Component {
 		});
 		if (this.state.time === 0) {
 			clearInterval(this.timerId);
+			this.setMCQTimeout();
 		}
 	};
 
@@ -145,6 +146,14 @@ class Question extends Component {
 			this.setState({
 				optionD: '1'
 			});
+		}
+	};
+
+	setMCQTimeout = () => {
+		if (this.state.time === 0) {
+			const questionBox = document.getElementById('question_box');
+			questionBox.innerHTML = '<h1>TIME UP</h1>';
+			this.displayCorrectOption();
 		}
 	};
 

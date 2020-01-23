@@ -6,7 +6,7 @@ import Title from './layout/Title';
 const Main = () => {
 	return (
 		<div className='all-center'>
-			<Title text='Rounds' />
+			<Title text='Rounds' showBack={true} backLink='/' />
 			<div className='grid-2' style={{ marginTop: '5vh' }}>
 				<Link to='main/teams' className='rectangle-card'>
 					Take Your Pick

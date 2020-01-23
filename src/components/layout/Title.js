@@ -27,6 +27,7 @@ const Title = props => {
 				</Link>
 			)}
 			<h2
+				id='title_box'
 				style={{
 					fontSize: props.style.fontSize,
 					gridColumnStart: 3,
