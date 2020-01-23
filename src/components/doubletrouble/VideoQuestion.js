@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Title from '../layout/Title';
-import VideoScreen from '../layout/VideoScreen';
 import QuestionBox from '../layout/QuestionBox';
 import CustomModal from '../layout/CustomModal';
 import { VideoQuestions as Video } from './Questions';
 import Timer from '../layout/Timer';
+import ReactPlayer from 'react-player';
 import video1 from '../../assets/video/1.mp4';
 import video2 from '../../assets/video/2.mp4';
 import video3 from '../../assets/video/3.mp4';
@@ -59,7 +59,13 @@ const VideoQuestion = props => {
 					<Timer time={time} />
 				</div>
 				<div style={{ marginTop: '2vh' }}>
-					<VideoScreen source={videos[choice]} startTimer={startTimer} />
+					<ReactPlayer
+						url={videos[choice]}
+						controls={true}
+						onEnded={startTimer}
+						height={480}
+						width={854}
+					/>
 				</div>
 				<div style={{ margin: 'auto' }}>
 					<button
@@ -67,7 +73,7 @@ const VideoQuestion = props => {
 						onClick={() => {
 							showModal('Clue', Video[choice].clue);
 						}}
-						style={{ marginTop: '2vh', width: '10.5rem' }}
+						style={{ marginTop: '2vh', width: '10.5rem', marginLeft: '2vw' }}
 					>
 						Clue
 					</button>
@@ -78,7 +84,7 @@ const VideoQuestion = props => {
 							showModal('Answer', Video[choice].answer);
 							setIsActive(false);
 						}}
-						style={{ marginTop: '4vh' }}
+						style={{ marginTop: '4vh', marginLeft: '2vw' }}
 					>
 						Answer
 					</button>
@@ -86,7 +92,7 @@ const VideoQuestion = props => {
 			</div>
 			<QuestionBox
 				question={Video[choice].question}
-				style={{ marginTop: '10vh', height: '10vh', width: '50vw' }}
+				style={{ marginTop: '10vh', height: '10vh', width: '60vw' }}
 			/>
 			<CustomModal
 				titletext={modalText.title}

@@ -2,16 +2,6 @@ import React from 'react';
 import { Player } from 'video-react';
 
 class VideoScreen extends React.Component {
-	componentDidMount() {
-		//this.player.subscribeToStateChange(this.handleStateChange.bind(this));
-		this.player.addEventListener('ended', this.props.startTimer);
-	}
-
-	// handleStateChange(state, prevState) {
-	// 	// copy player state to this component's state
-	// 	if (state.duration === state.currentTime) this.props.startTimer();
-	// }
-
 	render() {
 		return (
 			<Player
