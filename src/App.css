@@ -2,11 +2,11 @@
 
 /* Global Styles */
 :root {
-	--primary-color: #540d6e;
-	--dark-color: #1b2021;
-	--medium-color: #ccc9a1;
-	--brown-color: #a53f2b;
-	--light-color: #f0ffce;
+	--primary-color: #00adb5;
+	--dark-color: #1b2027;
+	--lessdark-color: #283039;
+	--medium-color: #ece796;
+	--light-color: #eeeeee;
 }
 
 * {
@@ -17,14 +17,6 @@
 	outline: none;
 	-webkit-user-select: none;
 }
-
-/* body {
-	font-family: 'Lato', sans-serif;
-	font-size: 1rem;
-	line-height: 1.6;
-	background-color: #0f0f0f;
-	color: white;
-} */
 
 a {
 	text-decoration: none;
@@ -287,7 +279,7 @@ img {
 .bg-medium,
 .badge-medium,
 .alert-medium {
-	background: var(--light-color);
+	background: var(--medium-color);
 	color: #333;
 }
 
@@ -296,6 +288,13 @@ img {
 .badge-dark,
 .alert-dark {
 	background: var(--dark-color);
+	color: #fff;
+}
+.btn-lessdark,
+.bg-lessdark,
+.badge-lessdark,
+.alert-lessdark {
+	background: var(--lessdark-color);
 	color: #fff;
 }
 
@@ -449,14 +448,22 @@ table th {
 	border-radius: 50%;
 	cursor: pointer;
 	margin: 1.5vh 3.5rem;
-	transition: opacity 0.2s ease-in;
+	transition: opacity 1s ease-in;
 	outline: none;
 	text-transform: uppercase;
 }
 
+.raised-card {
+	color: white;
+	padding: 4rem;
+	border-radius: 2rem;
+	background-color: var(--lessdark-color);
+	opacity: 0.8;
+}
+
 body {
 	height: 100vh;
-	background: linear-gradient(180deg, #30343f 30%, #0f0f0f 110%);
+	background-color: var(--dark-color);
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1rem;
 	line-height: 1.6;
@@ -515,6 +522,74 @@ body {
 	transition: opacity 0.2s ease-in;
 	outline: none;
 	text-transform: uppercase;
+}
+
+.diamond {
+	border-radius: 3rem;
+	color: 'lightblue';
+	padding: 2rem;
+	transition: transform 0.1s ease-in-out;
+}
+
+.diamond:hover {
+	transform: scale(1.1);
+	animation: diamond-bg-change 0.2s ease-in-out forwards;
+}
+
+@keyframes diamond-bg-change {
+	0% {
+		color: var(--lessdark-color);
+	}
+	100% {
+		color: var(--lessdark-color);
+
+		background: var(--primary-color);
+	}
+}
+
+.myvideo-link {
+	color: lightgreen;
+	border-radius: 3rem;
+	padding: 2rem;
+	transition: transform 0.1s ease-in-out;
+}
+
+.myvideo-link:hover {
+	transform: scale(1.1);
+	animation: video-bg-change 0.2s ease-in-out forwards;
+}
+
+@keyframes video-bg-change {
+	0% {
+		color: var(--lessdark-color);
+	}
+	100% {
+		color: var(--lessdark-color);
+
+		background: lightgreen;
+	}
+}
+.audio-link {
+	color: cyan;
+	border-radius: 3rem;
+	padding: 2rem;
+	transition: transform 0.1s ease-in-out;
+}
+
+.audio-link:hover {
+	transform: scale(1.1);
+	animation: audio-bg-change 0.2s ease-in-out forwards;
+}
+
+@keyframes audio-bg-change {
+	0% {
+		color: var(--lessdark-color);
+	}
+	100% {
+		color: var(--lessdark-color);
+
+		background: cyan;
+	}
 }
 
 .square-card {

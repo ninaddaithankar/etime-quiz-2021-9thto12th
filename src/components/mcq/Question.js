@@ -4,6 +4,8 @@ import './Question.css';
 import QuestionBox from '../layout/QuestionBox';
 import Title from '../layout/Title';
 import Timer from '../layout/Timer';
+import correctaudio from '../../assets/audio/mcq/correctsound.wav';
+import wrongaudio from '../../assets/audio/mcq/wrongsound.wav';
 
 import { questions } from './McqQuestions';
 
@@ -18,7 +20,8 @@ class Question extends Component {
 		optionD: '2',
 		option_choice_no: 0,
 		options_visible: false,
-		time: 25
+		time: 25,
+		isActive: false
 	};
 
 	componentDidMount() {
@@ -34,11 +37,17 @@ class Question extends Component {
 	componentWillUnmount() {
 		if (this.timerId) {
 			clearInterval(this.timerId);
+			this.setState({
+				isActive: false
+			});
 		}
 	}
 
 	startTimer = () => {
 		this.timerId = setInterval(() => this.tick(), 1000);
+		this.setState({
+			isActive: true
+		});
 	};
 
 	tick = () => {
@@ -46,6 +55,9 @@ class Question extends Component {
 			time: this.state.time - 1
 		});
 		if (this.state.time === 0) {
+			this.setState({
+				isActive: false
+			});
 			clearInterval(this.timerId);
 			this.setMCQTimeout();
 		}
@@ -66,6 +78,9 @@ class Question extends Component {
 
 	nextQuestion = () => {
 		if (this.timerId) {
+			this.setState({
+				isActive: false
+			});
 			clearInterval(this.timerId);
 		}
 		this.setState({
@@ -101,8 +116,15 @@ class Question extends Component {
 					[e.target.name]: '1'
 				});
 				if (this.timerId) {
+					this.setState({
+						isActive: false
+					});
 					clearInterval(this.timerId);
 				}
+				this.correctaudioplayer.play();
+				this.setState({
+					option_choice_no: this.state.option_choice_no + 1
+				});
 			} else {
 				if (this.state.option_choice_no === 1) {
 					this.displayCorrectOption();
@@ -111,6 +133,7 @@ class Question extends Component {
 				this.setState({
 					[e.target.name]: '0'
 				});
+				this.wrongaudioplayer.play();
 			}
 		}
 		this.setState({
@@ -120,6 +143,9 @@ class Question extends Component {
 
 	displayCorrectOption = () => {
 		if (this.timerId) {
+			this.setState({
+				isActive: false
+			});
 			clearInterval(this.timerId);
 		}
 		const temp_optionA = document.getElementsByName('optionA');
@@ -154,6 +180,7 @@ class Question extends Component {
 			const questionBox = document.getElementById('question_box');
 			questionBox.innerHTML = '<h1>TIME UP</h1>';
 			this.displayCorrectOption();
+			this.wrongaudioplayer.play();
 		}
 	};
 
@@ -179,6 +206,9 @@ class Question extends Component {
 					showBack={false}
 				/>
 				<QuestionBox
+					style={{
+						fontSize: '2.9rem'
+					}}
 					question={questions[choice_no][group_no][question_no].question}
 				/>
 				<div className='inline-grid-9'>
@@ -195,7 +225,11 @@ class Question extends Component {
 							onClick={this.backToOptionSelect}
 						></i>
 					</Link>
-					<Timer updateTimer={this.updateTimer} time={this.state.time} />
+					<Timer
+						updateTimer={this.updateTimer}
+						time={this.state.time}
+						isActive={this.state.isActive}
+					/>
 					<i
 						className='fa fa-chevron-circle-right'
 						style={{
@@ -287,6 +321,16 @@ class Question extends Component {
 						</button>
 					</div>
 				)}
+				<audio
+					ref={ref => (this.correctaudioplayer = ref)}
+					src={correctaudio}
+					preload='auto'
+				/>
+				<audio
+					ref={ref => (this.wrongaudioplayer = ref)}
+					src={wrongaudio}
+					preload='auto'
+				/>
 			</div>
 		);
 	}

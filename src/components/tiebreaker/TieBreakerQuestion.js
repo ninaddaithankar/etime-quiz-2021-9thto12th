@@ -4,14 +4,15 @@ import QuestionBox from '../layout/QuestionBox';
 import CustomModal from '../layout/CustomModal';
 import Timer from '../layout/Timer';
 import { questions } from './Questions';
+import { questionNo as question_no } from '../layout/IsClicked';
 import correctaudio from '../../assets/audio/mcq/correctsound.wav';
 import wrongaudio from '../../assets/audio/mcq/wrongsound.wav';
 
-const MixedBagQuestion = props => {
+const TieBreakerQuestion = props => {
 	const choice = props.match.params.choice_no - 1;
 	const [modalText, setModalText] = useState({ title: '', body: '' });
 	const [modalShow, setModalShow] = useState(false);
-	const [time, setTime] = useState(30);
+	const [time, setTime] = useState(25);
 	const [isActive, setIsActive] = useState(false);
 	let sound = null;
 
@@ -22,6 +23,7 @@ const MixedBagQuestion = props => {
 
 	const startTimer = () => {
 		document.addEventListener('keydown', logKey);
+
 		setIsActive(!isActive);
 	};
 
@@ -32,7 +34,6 @@ const MixedBagQuestion = props => {
 		if (e.code == 'KeyC') {
 			document.getElementById('sound').src = correctaudio;
 		}
-		console.log(e.code);
 	};
 
 	useEffect(() => {
@@ -54,19 +55,19 @@ const MixedBagQuestion = props => {
 	const setTimeUp = () => {
 		if (time === 0) {
 			document.getElementById('title_box').innerHTML = 'TIME UP';
-			document.getElementById('sound').src = wrongaudio;
-			sound.play();
 		}
+		document.getElementById('sound').src = wrongaudio;
+		sound.play();
 		setIsActive(false);
 	};
 
 	return (
 		<div className='all-center'>
 			<Title
-				style={{ marginTop: '7vh', color: '#99FF99' }}
+				style={{ marginTop: '7vh' }}
 				showBack={true}
-				backLink='/main/mixedbag'
-				text={questions[choice].topic}
+				backLink='/main/tiebreaker'
+				text={`Dice No ${choice + 1}`}
 			/>
 			<div className='grid-6'>
 				<Timer
@@ -85,22 +86,15 @@ const MixedBagQuestion = props => {
 						height: '60vh',
 						width: '60vw'
 					}}
-					question={questions[choice].question}
+					question={questions[choice][question_no[choice]].question}
 				/>
 			</div>
 			<div style={{ marginTop: '7vh' }}>
 				<button
 					className='btn capital'
-					style={{ paddingLeft: '3.2rem', paddingRight: '3.2rem' }}
-					onClick={() => showModal('Clue', questions[choice].clue)}
-				>
-					Clue
-				</button>
-				<button
-					className='btn capital'
 					style={{ marginLeft: '2vw' }}
 					onClick={() => {
-						showModal('Answer', questions[choice].answer);
+						showModal('Answer', questions[choice][question_no[choice]].answer);
 						setIsActive(false);
 						sound.play();
 					}}
@@ -126,4 +120,4 @@ const MixedBagQuestion = props => {
 	);
 };
 
-export default MixedBagQuestion;
+export default TieBreakerQuestion;

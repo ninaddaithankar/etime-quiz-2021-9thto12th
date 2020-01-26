@@ -3,17 +3,23 @@ import Timer from '../layout/Timer';
 import QuestionBox from '../layout/QuestionBox';
 import { questions } from './RapidFireQuestions';
 import { Link } from 'react-router-dom';
+import correctaudio from '../../assets/audio/mcq/correctsound.wav';
+import wrongaudio from '../../assets/audio/mcq/wrongsound.wav';
 
 class RapidFireQuestion extends Component {
 	state = {
 		time: 60,
 		choice: this.props.match.params.choice_no - 1,
 		question_no: 0,
-		showAnswers: false
+		showAnswers: false,
+		isActive: false
 	};
 
 	componentDidMount() {
 		this.timerId = setInterval(() => this.tick(), 1000);
+		this.setState({
+			isActive: true
+		});
 	}
 
 	tick = () => {
@@ -39,25 +45,38 @@ class RapidFireQuestion extends Component {
 				question_no: this.state.question_no + 1
 			});
 		} else {
+			document.getElementById('sound').src = correctaudio;
+			this.sound.play();
 			document.getElementById('question_box').innerHTML =
 				'Congrats!<br>You completed all questions in time!';
 			if (this.timerId) clearInterval(this.timerId);
-			this.setState({ showAnswers: true });
+			this.setState({ showAnswers: true, isActive: false });
 		}
 	};
 
 	setTimeUp = () => {
+		document.getElementById('sound').src = wrongaudio;
+		this.sound.play();
 		document.getElementById('question_box').innerHTML = 'TIME UP!';
-		this.setState({ showAnswers: true });
+		this.setState({ showAnswers: true, isActive: false });
 	};
 
 	render() {
 		const { choice, question_no } = this.state;
 		return (
 			<div className='all-center'>
-				<Timer style={{ marginTop: '5vh' }} time={this.state.time} />
+				<Timer
+					style={{ marginTop: '5vh' }}
+					time={this.state.time}
+					isActive={this.state.isActive}
+				/>
 				<QuestionBox
-					style={{ marginTop: '7vh', height: '45vh' }}
+					style={{
+						marginTop: '7vh',
+						height: '45vh',
+						fontSize: '3rem',
+						wordSpacing: '3px'
+					}}
 					question={questions[choice][question_no].question}
 				/>
 				{this.state.showAnswers && (
@@ -93,6 +112,14 @@ class RapidFireQuestion extends Component {
 						onClick={this.nextQuestion}
 					/>
 				)}
+				<audio
+					id='sound'
+					ref={ref => {
+						this.sound = ref;
+					}}
+					src={correctaudio}
+					preload='auto'
+				/>
 			</div>
 		);
 	}

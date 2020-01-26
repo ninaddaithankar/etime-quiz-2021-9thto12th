@@ -9,15 +9,11 @@ const DoubleTroubleTeamSelection = () => {
 		<div className='all-center'>
 			<Title text='Double Trouble' showBack={true} backLink='/main' />
 			<Repeat times={6} className='grid-6' style={{ marginTop: '7vh' }}>
-				{i => (
-					<VideoLink style={{ margin: '2rem' }} key={i + 1} number={i + 1} />
-				)}
+				{i => <VideoLink key={i + 1} number={i + 1} />}
 			</Repeat>
 
 			<Repeat times={6} className='grid-6' style={{ marginTop: '5vh' }}>
-				{i => (
-					<AudioLink style={{ margin: '2rem' }} key={i + 1} number={i + 1} />
-				)}
+				{i => <AudioLink key={i + 1} number={i + 1} />}
 			</Repeat>
 		</div>
 	);

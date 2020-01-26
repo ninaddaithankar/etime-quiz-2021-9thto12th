@@ -10,13 +10,15 @@ import audio3 from '../../assets/audio/3.mp3';
 import audio4 from '../../assets/audio/4.mp3';
 import audio5 from '../../assets/audio/5.mp3';
 import audio6 from '../../assets/audio/6.mp3';
+import correctaudio from '../../assets/audio/mcq/correctsound.wav';
+import wrongaudio from '../../assets/audio/mcq/wrongsound.wav';
 
 const AudioQuestion = props => {
 	let audioplayer = null;
 	const choice = props.match.params.choice_no - 1;
 	const [modalText, setModalText] = useState({ title: '', body: '' });
 	const [modalShow, setModalShow] = useState(false);
-	const [time, setTime] = useState(25);
+	const [time, setTime] = useState(30);
 	const [isActive, setIsActive] = useState(false);
 	const [playing, setPlaying] = useState(false);
 	const showModal = (title, body) => {
@@ -24,9 +26,20 @@ const AudioQuestion = props => {
 		setModalShow(true);
 	};
 	const audio = [audio1, audio2, audio3, audio4, audio5, audio6];
+	let sound = null;
 
 	const startTimer = () => {
+		document.addEventListener('keydown', logKey);
 		setIsActive(!isActive);
+	};
+
+	const logKey = e => {
+		if (e.code == 'KeyW') {
+			document.getElementById('sound').src = wrongaudio;
+		}
+		if (e.code == 'KeyC') {
+			document.getElementById('sound').src = correctaudio;
+		}
 	};
 
 	const playAudio = () => {
@@ -54,6 +67,8 @@ const AudioQuestion = props => {
 		let interval = null;
 		if (isActive && time === 0) {
 			clearInterval(interval);
+			setIsActive(false);
+			setTimeUp();
 		} else if (isActive) {
 			interval = setInterval(() => {
 				setTime(time => time - 1);
@@ -63,6 +78,15 @@ const AudioQuestion = props => {
 			clearInterval(interval);
 		};
 	}, [isActive, time]);
+
+	const setTimeUp = () => {
+		if (time === 0) {
+			document.getElementById('question_box').innerHTML = 'TIME UP!';
+			document.getElementById('sound').src = wrongaudio;
+			sound.play();
+		}
+	};
+
 	return (
 		<div className='all-center'>
 			<Title
@@ -73,14 +97,15 @@ const AudioQuestion = props => {
 			/>
 			<div className='grid-3' style={{ width: '80vw', marginTop: '3vh' }}>
 				<div style={{ margin: 'auto' }}>
-					<Timer time={time} startTimer={startTimer} />
+					<Timer time={time} isActive={isActive} />
 				</div>
 				<QuestionBox
 					question={Audio[choice].question}
 					style={{
 						marginTop: '4vh',
 						width: '40vw',
-						height: '40vh'
+						height: '40vh',
+						fontSize: '3rem'
 					}}
 				/>
 				<div style={{ marginTop: '14vh', margin: 'auto' }}>
@@ -99,6 +124,7 @@ const AudioQuestion = props => {
 						onClick={() => {
 							showModal('Answer', Audio[choice].answer);
 							setIsActive(false);
+							sound.play();
 						}}
 						style={{ marginTop: '4vh' }}
 					>
@@ -112,7 +138,7 @@ const AudioQuestion = props => {
 					<i
 						className='fas fa-pause-circle'
 						style={{
-							fontSize: '5rem',
+							fontSize: '7rem',
 							margin: 'auto',
 							gridColumn: '1 / span 1'
 						}}
@@ -122,7 +148,7 @@ const AudioQuestion = props => {
 					<i
 						className='fas fa-play-circle'
 						style={{
-							fontSize: '5rem',
+							fontSize: '7rem',
 							margin: 'auto',
 							gridColumn: '1 / span 1'
 						}}
@@ -140,6 +166,14 @@ const AudioQuestion = props => {
 				ref={ref => {
 					audioplayer = ref;
 				}}
+			/>
+			<audio
+				id='sound'
+				ref={ref => {
+					sound = ref;
+				}}
+				src={correctaudio}
+				preload='auto'
 			/>
 		</div>
 	);

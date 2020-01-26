@@ -10,7 +10,7 @@ const CustomModal = props => {
 			centered
 			style={{ border: 'none' }}
 		>
-			<Modal.Header className='bg-dark' style={{ border: 'none' }}>
+			<Modal.Header style={{ border: 'none', background: 'black' }}>
 				<Modal.Title
 					id='contained-modal-title-vcenter'
 					style={{
@@ -24,10 +24,10 @@ const CustomModal = props => {
 				</Modal.Title>
 			</Modal.Header>
 			<Modal.Body
+				className='bg-lessdark'
 				style={{
-					background: 'black',
 					color: 'white',
-					fontSize: '2rem',
+					fontSize: '2.5rem',
 					fontFamily: 'Cardo',
 					padding: '4rem '
 				}}

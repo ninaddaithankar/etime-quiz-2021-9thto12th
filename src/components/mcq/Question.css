@@ -1,19 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo&display=swap');
 
 :root {
-	--primary-color: #540d6e;
-	--dark-color: #1b2021;
-	--medium-color: #ccc9a1;
-	--brown-color: #a53f2b;
-	--light-color: #f0ffce;
+	--primary-color: #00adb5;
+	--dark-color: #1b2027;
+	--lessdark-color: #283039;
+
+	--medium-color: #fffbad;
+	--light-color: #eeeeee;
+	--green-color: #7bf85b;
 }
 
 .round-timer {
 	width: 8rem;
-	padding: 2rem 2rem;
+	padding: 2.1rem 2rem;
 	font-size: 2.8rem;
-	border: 1.5px solid white;
+	/* border: 1.5px solid white; */
 	border-radius: 50%;
+	color: var(--dark-color);
+	background: linear-gradient(var(--light-color), var(--green-color));
+}
+
+.animate-timer {
+	animation: timer 1s infinite forwards;
+}
+
+@keyframes timer {
+	0% {
+		opacity: 0.1;
+		transform: scale(1.1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .option-button {
@@ -43,6 +62,19 @@
 	padding: 2rem 8rem;
 	border: 1px solid white;
 	border-radius: 4rem;
+}
+
+.animate-textbox {
+	animation: grow 1s ease-in-out;
+}
+
+@keyframes grow {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .btn:focus,

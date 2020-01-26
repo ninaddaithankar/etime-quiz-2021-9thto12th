@@ -3,7 +3,7 @@ import React from 'react';
 const Timer = props => {
 	return (
 		<h1
-			className='round-timer'
+			className={props.isActive ? 'round-timer animate-timer' : 'round-timer'}
 			style={{
 				gridColumnStart: '5',
 				gridColumnEnd: '6',

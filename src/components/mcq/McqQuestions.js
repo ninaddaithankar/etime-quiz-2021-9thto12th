@@ -186,7 +186,8 @@ export const questions = [
 		[
 			{
 				id: '1',
-				question: 'From where did Shivaji escape by hiding inside a basket?',
+				question:
+					'From where did Shivaji Maharaj escape by hiding inside a basket?',
 				options: ['Agra', 'Lucknow', 'Sinhagad', 'Purandar'],
 				answer: 'Agra'
 			},
@@ -298,7 +299,7 @@ export const questions = [
 			{
 				id: '2',
 				question:
-					'Complete the axiom with correct preposition:\n\t\tCowards die many times _________ their death.',
+					'Complete the axiom with the correct preposition: Cowards die many times _________ their death.',
 				options: ['after', 'before', 'about', 'for'],
 				answer: 'before'
 			}
@@ -317,7 +318,7 @@ export const questions = [
 			{
 				id: '2',
 				question:
-					'How many words are misspelled in the following sentence:\nThe camal carravan crossed the dessert for a weak before it arrived at the oasis.',
+					'How many words are misspelled in the following sentence:\nThe camal carravan crossed the dessert for a weak before it arrived at the oassis.',
 				options: ['3', '2', '4', '5'],
 				answer: '5'
 			}
@@ -343,9 +344,9 @@ export const questions = [
 			{
 				id: '1',
 				question:
-					'Which country has a tricolourflag with white, blue and red bands?',
+					'Which country has a tri-colour flag with white, blue and red bands?',
 				options: ['Russia', 'Canada', 'China', 'Afghanistan'],
-				answer: 'Canada'
+				answer: 'Russia'
 			},
 			{
 				id: '2',

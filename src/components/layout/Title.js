@@ -29,6 +29,7 @@ const Title = props => {
 			<h2
 				id='title_box'
 				style={{
+					color: props.style.color,
 					fontSize: props.style.fontSize,
 					gridColumnStart: 3,
 					gridColumnEnd: 8,

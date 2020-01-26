@@ -1,18 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { isClickedMixedBag } from './IsClicked';
 
 const DoorLink = props => {
 	return (
 		<div className='all-center'>
 			<Link
+				className='diamond'
 				to={`/main/mixedbag/question/${props.number}`}
-				style={{ color: 'cyan', ...props.style }}
+				style={
+					isClickedMixedBag[props.number - 1]
+						? { color: 'grey', ...props.style }
+						: { color: 'cyan', ...props.style }
+				}
 			>
-				<span style={numberStyle}>
-					{props.number}
-					<br />
-				</span>
-				<i className='fas fa-door-closed' style={doorStyle}></i>
+				<div
+					style={{ margin: '0.3rem' }}
+					onClick={() => {
+						isClickedMixedBag[props.number - 1] = true;
+					}}
+				>
+					<span style={numberStyle}>
+						{props.number}
+						<br />
+					</span>
+					<i className='far fa-gem' style={doorStyle}></i>
+				</div>
 			</Link>
 		</div>
 	);
@@ -20,10 +33,9 @@ const DoorLink = props => {
 
 const numberStyle = {
 	fontWeight: 'bold',
-	color: 'cyan',
 	fontSize: '3rem'
 };
 
-const doorStyle = { color: 'lightgreen', fontSize: '7vw' };
+const doorStyle = { fontSize: '7vw' };
 
 export default DoorLink;

@@ -1,18 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { isClickedVideo } from '../layout/IsClicked';
 
 const VideoLink = props => {
 	return (
 		<div className='all-center'>
-			<Link
-				to={`/main/double/videoquestion/${props.number}`}
-				style={{ color: 'cyan', ...props.style }}
-			>
-				<span style={numberStyle}>
-					{props.number}
-					<br />
-				</span>
-				<i className='fas fa-film' style={iconStyle}></i>
+			<Link to={`/main/double/videoquestion/${props.number}`}>
+				<div
+					className='myvideo-link'
+					style={
+						isClickedVideo[props.number - 1]
+							? { color: 'grey', ...props.style }
+							: { color: 'lightgreen', ...props.style }
+					}
+					onClick={() => {
+						isClickedVideo[props.number - 1] = true;
+					}}
+				>
+					<span style={numberStyle}>
+						{props.number}
+						<br />
+					</span>
+					<i className='fas fa-film' style={iconStyle}></i>
+				</div>
 			</Link>
 		</div>
 	);
@@ -20,10 +30,9 @@ const VideoLink = props => {
 
 const numberStyle = {
 	fontWeight: 'bold',
-	color: 'cyan',
 	fontSize: '3rem'
 };
 
-const iconStyle = { color: 'lightgreen', fontSize: '9vw' };
+const iconStyle = { fontSize: '9vw' };
 
 export default VideoLink;

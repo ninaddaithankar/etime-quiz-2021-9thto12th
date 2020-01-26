@@ -19,7 +19,7 @@ export const AudioQuestions = [
 	},
 	{
 		question: 'Identify this Famous News Anchor',
-		clue: 'He serves as the Editor in Chief of Zee News.',
+		clue: 'He hosts the prime time show DNA on Zee News.',
 		answer: 'Sudhir Chaudhary'
 	},
 	{
@@ -29,9 +29,9 @@ export const AudioQuestions = [
 		answer: 'Mahendra Singh Dhoni'
 	},
 	{
-		question: 'Identify this Motivational Speaker',
+		question: 'Identify this Speaker',
 		clue:
-			'He is an Indian Yogi and author who established an NGO  Isha Foundation, and he is regarded as one of the best influential spiritual guru in India.',
+			'He is an Indian Yogi and author who established an NGO  Isha Foundation.',
 		answer: 'Sadhguru / Jaggi Vasudev'
 	}
 ];
@@ -39,13 +39,13 @@ export const VideoQuestions = [
 	{
 		question: 'Identify this Natural Celestial Phenomenon',
 		clue:
-			'It is a natural light display in the Earth’s sky also known as Northern lights or Southern lights or Fire in the sky and it is caused due to disturbances in the magnetosphere caused by solar wind.',
-		answer: 'Aurora Borealis'
+			'It is caused due to disturbances in the magnetosphere caused by solar wind.',
+		answer: 'Aurora Borealis / Northern Lights / Fire in the Sky'
 	},
 	{
-		question: 'Identify the Dance',
+		question: 'Identify the Dance Form',
 		clue:
-			'This dance form is popular in the state of Kerala and it connotes “a dance of an enchantress, a beautiful woman.”',
+			'Popular in Kerala, it connotes “a dance of an enchantress, a beautiful woman.”',
 		answer: 'Mohiniyattam.'
 	},
 	{
@@ -57,8 +57,8 @@ export const VideoQuestions = [
 	{
 		question: 'Identify the Monument',
 		clue:
-			'It is a large marble building located in Kolkata dedicated to the memory of a Queen and now it is a museum and a famous tourist destination.',
-		answer: 'Victoria Memorial'
+			'It is a museum located in Kolkata dedicated to the memory of a Queen.',
+		answer: 'Victoria Memorial Hall'
 	},
 	{
 		question: 'Identify this Tribal Art',
@@ -67,8 +67,9 @@ export const VideoQuestions = [
 		answer: 'Warli Painting.'
 	},
 	{
-		question: '',
-		clue: '',
-		answer: ''
+		question: 'Identify this Marine Mammal',
+		clue:
+			'The first half of its name is derived from a Dutch word meaning “Whale".',
+		answer: 'Walrus'
 	}
 ];

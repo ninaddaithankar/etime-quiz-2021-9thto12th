@@ -7,7 +7,7 @@ const QuestionBox = props => {
 			className='all-center textbox'
 			style={{ marginTop: '1vh', ...props.style }}
 		>
-			{props.question}
+			<span className='animate-textbox'>{props.question}</span>
 		</div>
 	);
 };

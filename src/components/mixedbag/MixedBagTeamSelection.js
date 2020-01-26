@@ -9,9 +9,7 @@ const MixedBagTeamSelection = () => {
 			<Title showBack={true} backLink={'/main'} text='Mixed Bag' />
 
 			<Repeat times={14} className='grid-7' style={{ marginTop: '10vh' }}>
-				{i => (
-					<DoorLink style={{ margin: '1.8rem' }} key={i + 1} number={i + 1} />
-				)}
+				{i => <DoorLink key={i + 1} number={i + 1} />}
 			</Repeat>
 		</div>
 	);

@@ -14,6 +14,8 @@ import MixedBagTeamSelection from './components/mixedbag/MixedBagTeamSelection';
 import DoubleTroubleTeamSelection from './components/doubletrouble/DoubleTroubleTeamSelection';
 import AudioQuestion from './components/doubletrouble/AudioQuestion';
 import VideoQuestion from './components/doubletrouble/VideoQuestion';
+import TieBreakerTeamSelection from './components/tiebreaker/TeamSelection';
+import TieBreakerQuestion from './components/tiebreaker/TieBreakerQuestion';
 
 function App() {
 	return (
@@ -92,6 +94,18 @@ function App() {
 						exact
 						path='/main/rapidfire/question/:choice_no'
 						component={RapidFireQuestion}
+					/>
+
+					{/* Tie Breaker Route */}
+					<Route
+						exact
+						path='/main/tiebreaker'
+						component={TieBreakerTeamSelection}
+					/>
+					<Route
+						exact
+						path='/main/tiebreaker/question/:choice_no'
+						component={TieBreakerQuestion}
 					/>
 
 					<Route component={NoMatch} />
