@@ -455,7 +455,7 @@ table th {
 	margin: 4vh 3rem;
 	transition: opacity 1s ease-in;
 	outline: none;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 .round-card-2 {
@@ -471,7 +471,7 @@ table th {
 	margin: 4vh 3rem;
 	transition: opacity 1s ease-in;
 	outline: none;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 .raised-card {

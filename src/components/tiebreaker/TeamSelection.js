@@ -23,7 +23,6 @@ const TeamSelection = props => {
 							className='fas fa-dice-one'
 							onClick={() => {
 								if (questionNo[0] < 1) questionNo[0]++;
-								console.log(questionNo[0]);
 							}}
 						></i>
 					</Link>
@@ -74,7 +73,7 @@ const TeamSelection = props => {
 						<i
 							className='fas fa-dice-four'
 							onClick={() => {
-								if (questionNo[3] >= 1) questionNo[3]++;
+								if (questionNo[3] < 1) questionNo[3]++;
 							}}
 						></i>
 					</Link>
