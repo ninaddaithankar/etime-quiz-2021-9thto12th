@@ -20,8 +20,8 @@ class Question extends Component {
 		optionD: '2',
 		option_choice_no: 0,
 		options_visible: false,
-		time: 25,
-		isActive: false
+		time: 20,
+		isActive: false,
 	};
 
 	componentDidMount() {
@@ -30,7 +30,7 @@ class Question extends Component {
 			group_no: 0,
 			question_no: 0,
 			options_visible: false,
-			time: 25
+			time: 20,
 		});
 	}
 
@@ -38,7 +38,7 @@ class Question extends Component {
 		if (this.timerId) {
 			clearInterval(this.timerId);
 			this.setState({
-				isActive: false
+				isActive: false,
 			});
 		}
 	}
@@ -46,32 +46,32 @@ class Question extends Component {
 	startTimer = () => {
 		this.timerId = setInterval(() => this.tick(), 1000);
 		this.setState({
-			isActive: true
+			isActive: true,
 		});
 	};
 
 	tick = () => {
 		this.setState({
-			time: this.state.time - 1
+			time: this.state.time - 1,
 		});
 		if (this.state.time === 0) {
 			this.setState({
-				isActive: false
+				isActive: false,
 			});
 			clearInterval(this.timerId);
 			this.setMCQTimeout();
 		}
 	};
 
-	updateTimer = e => {
+	updateTimer = (e) => {
 		this.setState({
-			time: e.target.value - 1
+			time: e.target.value - 1,
 		});
 	};
 
 	showOptions = () => {
 		this.setState({
-			options_visible: !this.state.options_visible
+			options_visible: !this.state.options_visible,
 		});
 		this.startTimer();
 	};
@@ -79,32 +79,32 @@ class Question extends Component {
 	nextQuestion = () => {
 		if (this.timerId) {
 			this.setState({
-				isActive: false
+				isActive: false,
 			});
 			clearInterval(this.timerId);
 		}
 		this.setState({
-			time: 25,
+			time: 20,
 			options_visible: false,
 			optionA: '2',
 			optionB: '2',
 			optionC: '2',
 			optionD: '2',
-			option_choice_no: 0
+			option_choice_no: 0,
 		});
 		if (this.state.question_no < 1) {
 			this.setState({
-				question_no: this.state.question_no + 1
+				question_no: this.state.question_no + 1,
 			});
-		} else if (this.state.group_no < 2) {
-			this.setState({
-				question_no: 0,
-				group_no: this.state.group_no + 1
-			});
-		}
+		} //else if (this.state.group_no < 2) {
+		// 	this.setState({
+		// 		question_no: 0,
+		// 		group_no: this.state.group_no + 1,
+		// 	});
+		// }
 	};
 
-	checkAnswer = e => {
+	checkAnswer = (e) => {
 		if (this.state.option_choice_no < 2) {
 			if (
 				e.target.value ===
@@ -113,17 +113,17 @@ class Question extends Component {
 				].answer
 			) {
 				this.setState({
-					[e.target.name]: '1'
+					[e.target.name]: '1',
 				});
 				if (this.timerId) {
 					this.setState({
-						isActive: false
+						isActive: false,
 					});
 					clearInterval(this.timerId);
 				}
 				this.correctaudioplayer.play();
 				this.setState({
-					option_choice_no: this.state.option_choice_no + 1
+					option_choice_no: this.state.option_choice_no + 1,
 				});
 			} else {
 				if (this.state.option_choice_no === 1) {
@@ -131,20 +131,20 @@ class Question extends Component {
 				}
 
 				this.setState({
-					[e.target.name]: '0'
+					[e.target.name]: '0',
 				});
 				this.wrongaudioplayer.play();
 			}
 		}
 		this.setState({
-			option_choice_no: this.state.option_choice_no + 1
+			option_choice_no: this.state.option_choice_no + 1,
 		});
 	};
 
 	displayCorrectOption = () => {
 		if (this.timerId) {
 			this.setState({
-				isActive: false
+				isActive: false,
 			});
 			clearInterval(this.timerId);
 		}
@@ -158,19 +158,19 @@ class Question extends Component {
 			].answer;
 		if (temp_optionA[0].value === correct_answer) {
 			this.setState({
-				optionA: '1'
+				optionA: '1',
 			});
 		} else if (temp_optionB[0].value === correct_answer) {
 			this.setState({
-				optionB: '1'
+				optionB: '1',
 			});
 		} else if (temp_optionC[0].value === correct_answer) {
 			this.setState({
-				optionC: '1'
+				optionC: '1',
 			});
 		} else if (temp_optionD[0].value === correct_answer) {
 			this.setState({
-				optionD: '1'
+				optionD: '1',
 			});
 		}
 	};
@@ -192,7 +192,7 @@ class Question extends Component {
 			optionA,
 			optionB,
 			optionC,
-			optionD
+			optionD,
 		} = this.state;
 		const [optionTextA, optionTextB, optionTextC, optionTextD] = questions[
 			choice_no
@@ -201,13 +201,13 @@ class Question extends Component {
 			<div className='all-center'>
 				<Title
 					style={{ marginTop: '4vh', fontSize: '1.7rem' }}
-					text={`Group ${group_no + 1}`}
+					text={`Question ${question_no + 1}`}
 					backLink='/main/teams'
 					showBack={false}
 				/>
 				<QuestionBox
 					style={{
-						fontSize: '2.9rem'
+						fontSize: '2.9rem',
 					}}
 					question={questions[choice_no][group_no][question_no].question}
 				/>
@@ -220,7 +220,7 @@ class Question extends Component {
 								gridColumnStart: '1',
 								gridColumnEnd: '2',
 								marginTop: '5vh',
-								cursor: 'pointer'
+								cursor: 'pointer',
 							}}
 							onClick={this.backToOptionSelect}
 						></i>
@@ -237,7 +237,7 @@ class Question extends Component {
 							gridColumnStart: '9',
 							gridColumnEnd: '10',
 							marginTop: '5vh',
-							cursor: 'pointer'
+							cursor: 'pointer',
 						}}
 						onClick={this.nextQuestion}
 					></i>
@@ -250,7 +250,7 @@ class Question extends Component {
 							fontWeight: 'bold',
 							marginTop: '4vh',
 							height: '35vh',
-							cursor: 'pointer'
+							cursor: 'pointer',
 						}}
 						className='all-center textbox bg-dark'
 						onClick={this.showOptions}
@@ -322,12 +322,12 @@ class Question extends Component {
 					</div>
 				)}
 				<audio
-					ref={ref => (this.correctaudioplayer = ref)}
+					ref={(ref) => (this.correctaudioplayer = ref)}
 					src={correctaudio}
 					preload='auto'
 				/>
 				<audio
-					ref={ref => (this.wrongaudioplayer = ref)}
+					ref={(ref) => (this.wrongaudioplayer = ref)}
 					src={wrongaudio}
 					preload='auto'
 				/>

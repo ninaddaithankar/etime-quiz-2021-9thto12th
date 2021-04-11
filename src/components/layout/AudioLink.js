@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { isClickedAudio } from '../layout/IsClicked';
 
-const AudioLink = props => {
+const AudioLink = (props) => {
 	return (
 		<div className='all-center'>
 			<Link to={`/main/double/audioquestion/${props.number}`}>
@@ -30,9 +30,9 @@ const AudioLink = props => {
 
 const numberStyle = {
 	fontWeight: 'bold',
-	fontSize: '3rem'
+	fontSize: '2rem',
 };
 
-const iconStyle = { fontSize: '9vw' };
+const iconStyle = { fontSize: '7vw' };
 
 export default AudioLink;

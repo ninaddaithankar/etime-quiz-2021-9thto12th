@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { isClickedVideo } from '../layout/IsClicked';
 
-const VideoLink = props => {
+const VideoLink = (props) => {
 	return (
 		<div className='all-center'>
 			<Link to={`/main/double/videoquestion/${props.number}`}>
@@ -30,9 +30,9 @@ const VideoLink = props => {
 
 const numberStyle = {
 	fontWeight: 'bold',
-	fontSize: '3rem'
+	fontSize: '2rem',
 };
 
-const iconStyle = { fontSize: '9vw' };
+const iconStyle = { fontSize: '7vw' };
 
 export default VideoLink;

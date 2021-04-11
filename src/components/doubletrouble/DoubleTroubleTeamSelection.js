@@ -8,12 +8,12 @@ const DoubleTroubleTeamSelection = () => {
 	return (
 		<div className='all-center'>
 			<Title text='Double Trouble' showBack={true} backLink='/main' />
-			<Repeat times={6} className='grid-6' style={{ marginTop: '7vh' }}>
-				{i => <VideoLink key={i + 1} number={i + 1} />}
+			<Repeat times={8} className='grid-8' style={{ marginTop: '13vh' }}>
+				{(i) => <VideoLink key={i + 1} number={i + 1} />}
 			</Repeat>
 
-			<Repeat times={6} className='grid-6' style={{ marginTop: '5vh' }}>
-				{i => <AudioLink key={i + 1} number={i + 1} />}
+			<Repeat times={8} className='grid-8' style={{ marginTop: '5vh' }}>
+				{(i) => <AudioLink key={i + 1} number={i + 1} />}
 			</Repeat>
 		</div>
 	);

@@ -13,7 +13,7 @@ import audio6 from '../../assets/audio/6.mp3';
 import correctaudio from '../../assets/audio/mcq/correctsound.wav';
 import wrongaudio from '../../assets/audio/mcq/wrongsound.wav';
 
-const AudioQuestion = props => {
+const AudioQuestion = (props) => {
 	let audioplayer = null;
 	const choice = props.match.params.choice_no - 1;
 	const [modalText, setModalText] = useState({ title: '', body: '' });
@@ -33,7 +33,7 @@ const AudioQuestion = props => {
 		setIsActive(!isActive);
 	};
 
-	const logKey = e => {
+	const logKey = (e) => {
 		if (e.code == 'KeyW') {
 			document.getElementById('sound').src = wrongaudio;
 		}
@@ -71,7 +71,7 @@ const AudioQuestion = props => {
 			setTimeUp();
 		} else if (isActive) {
 			interval = setInterval(() => {
-				setTime(time => time - 1);
+				setTime((time) => time - 1);
 			}, 1000);
 		}
 		return () => {
@@ -105,7 +105,7 @@ const AudioQuestion = props => {
 						marginTop: '4vh',
 						width: '40vw',
 						height: '40vh',
-						fontSize: '3rem'
+						fontSize: '3rem',
 					}}
 				/>
 				<div style={{ marginTop: '14vh', margin: 'auto' }}>
@@ -140,7 +140,7 @@ const AudioQuestion = props => {
 						style={{
 							fontSize: '7rem',
 							margin: 'auto',
-							gridColumn: '1 / span 1'
+							gridColumn: '1 / span 1',
 						}}
 						onClick={pauseAudio}
 					/>
@@ -150,7 +150,7 @@ const AudioQuestion = props => {
 						style={{
 							fontSize: '7rem',
 							margin: 'auto',
-							gridColumn: '1 / span 1'
+							gridColumn: '1 / span 1',
 						}}
 						onClick={playAudio}
 					/>
@@ -163,13 +163,13 @@ const AudioQuestion = props => {
 				onHide={() => setModalShow(false)}
 			/>
 			<audio
-				ref={ref => {
+				ref={(ref) => {
 					audioplayer = ref;
 				}}
 			/>
 			<audio
 				id='sound'
-				ref={ref => {
+				ref={(ref) => {
 					sound = ref;
 				}}
 				src={correctaudio}

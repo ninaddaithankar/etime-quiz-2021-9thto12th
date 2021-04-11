@@ -33,6 +33,18 @@ export const AudioQuestions = [
 		clue:
 			'He is an Indian Yogi and author who established an NGO  Isha Foundation.',
 		answer: 'Sadhguru / Jaggi Vasudev'
+	},
+	{
+		question: 'Empty',
+		clue:
+			'Empty',
+		answer: 'Empty'
+	},
+	{
+		question: 'Empty',
+		clue:
+			'Empty',
+		answer: 'Empty'
 	}
 ];
 export const VideoQuestions = [
@@ -71,5 +83,17 @@ export const VideoQuestions = [
 		clue:
 			'The first half of its name is derived from a Dutch word meaning “Whale".',
 		answer: 'Walrus'
+	},
+	{
+		question: 'Empty',
+		clue:
+			'Empty',
+		answer: 'Empty'
+	},
+	{
+		question: 'Empty',
+		clue:
+			'Empty',
+		answer: 'Empty'
 	}
 ];

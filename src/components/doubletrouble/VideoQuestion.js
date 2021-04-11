@@ -11,17 +11,19 @@ import video3 from '../../assets/video/3.mp4';
 import video4 from '../../assets/video/4.mp4';
 import video5 from '../../assets/video/5.mp4';
 import video6 from '../../assets/video/6.mp4';
+import video7 from '../../assets/video/7.mp4';
+import video8 from '../../assets/video/8.mp4';
 import correctaudio from '../../assets/audio/mcq/correctsound.wav';
 import wrongaudio from '../../assets/audio/mcq/wrongsound.wav';
 
-const VideoQuestion = props => {
+const VideoQuestion = (props) => {
 	const [time, setTime] = useState(30);
 	const [modalText, setModalText] = useState({ title: '', body: '' });
 	const [modalShow, setModalShow] = useState(false);
 	const [isActive, setIsActive] = useState(false);
 	let sound = null;
 
-	const videos = [video1, video2, video3, video4, video5, video6];
+	const videos = [video1, video2, video3, video4, video5, video6, video7, video8];
 
 	const choice = props.match.params.choice_no - 1;
 
@@ -36,7 +38,7 @@ const VideoQuestion = props => {
 		setIsActive(!isActive);
 	};
 
-	const logKey = e => {
+	const logKey = (e) => {
 		if (e.code == 'KeyW') {
 			document.getElementById('sound').src = wrongaudio;
 		}
@@ -53,7 +55,7 @@ const VideoQuestion = props => {
 			setTimeUp();
 		} else if (isActive) {
 			interval = setInterval(() => {
-				setTime(time => time - 1);
+				setTime((time) => time - 1);
 			}, 1000);
 		}
 		return () => {
@@ -127,7 +129,7 @@ const VideoQuestion = props => {
 			/>
 			<audio
 				id='sound'
-				ref={ref => {
+				ref={(ref) => {
 					sound = ref;
 				}}
 				src={correctaudio}

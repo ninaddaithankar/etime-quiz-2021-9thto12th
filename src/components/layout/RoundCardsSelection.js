@@ -6,7 +6,7 @@ class RoundCardsSelection extends React.Component {
 	render() {
 		const { props } = this;
 		return (
-			<div className='grid-3' style={{ marginTop: '5vh' }}>
+			<div className='grid-4' style={{ marginTop: '7vh' }}>
 				<Link
 					to={`${props.link}/question/1`}
 					className='round-card'
@@ -49,23 +49,43 @@ class RoundCardsSelection extends React.Component {
 				</Link>
 				<Link
 					to={`${props.link}/question/5`}
-					className='round-card'
+					className='round-card-2'
 					style={isClicked[4] ? inActive : {}}
 					onClick={() => {
 						isClicked[4] = true;
 					}}
 				>
-					5
+					1
 				</Link>
 				<Link
 					to={`${props.link}/question/6`}
-					className='round-card'
+					className='round-card-2'
 					style={isClicked[5] ? inActive : {}}
 					onClick={() => {
 						isClicked[5] = true;
 					}}
 				>
-					6
+					2
+				</Link>
+				<Link
+					to={`${props.link}/question/7`}
+					className='round-card-2'
+					style={isClicked[6] ? inActive : {}}
+					onClick={() => {
+						isClicked[6] = true;
+					}}
+				>
+					3
+				</Link>
+				<Link
+					to={`${props.link}/question/8`}
+					className='round-card-2'
+					style={isClicked[7] ? inActive : {}}
+					onClick={() => {
+						isClicked[7] = true;
+					}}
+				>
+					4
 				</Link>
 			</div>
 		);
@@ -75,7 +95,7 @@ class RoundCardsSelection extends React.Component {
 const inActive = {
 	background: 'none',
 	color: 'white',
-	border: '1px solid white'
+	border: '1px solid white',
 };
 
 export default RoundCardsSelection;

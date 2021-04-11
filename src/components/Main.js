@@ -22,7 +22,7 @@ const Main = () => {
 				<Link to='/main/double' className='rectangle-card'>
 					Double Trouble
 				</Link>
-				<Link to='/main/rapidfire' className='rectangle-card'>
+				<Link to='/main' className='rectangle-card'>
 					Rapid Fire
 				</Link>
 			</div>
