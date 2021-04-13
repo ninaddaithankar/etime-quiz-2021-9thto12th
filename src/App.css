@@ -446,7 +446,7 @@ table th {
 	display: inline-block;
 	background: linear-gradient(var(--light-color), var(--medium-color));
 	color: var(--dark-color);
-	padding: 5rem 7rem;
+	padding: 5rem 6.5rem;
 	font-size: 4rem;
 	font-weight: 600;
 	border: none;
@@ -462,7 +462,7 @@ table th {
 	display: inline-block;
 	background: linear-gradient(rgb(198, 239, 255), rgb(79, 120, 197));
 	color: var(--dark-color);
-	padding: 5rem 7rem;
+	padding: 5rem 6.5rem;
 	font-size: 4rem;
 	font-weight: 600;
 	border: none;

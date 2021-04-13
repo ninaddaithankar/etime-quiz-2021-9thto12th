@@ -15,7 +15,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[0] = true;
 					}}
 				>
-					5
+					9
 				</Link>
 				<Link
 					to={`${props.link}/question/2`}
@@ -25,7 +25,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[1] = true;
 					}}
 				>
-					6
+					10
 				</Link>
 				<Link
 					to={`${props.link}/question/3`}
@@ -35,7 +35,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[2] = true;
 					}}
 				>
-					7
+					11
 				</Link>
 				<Link
 					to={`${props.link}/question/4`}
@@ -45,7 +45,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[3] = true;
 					}}
 				>
-					8
+					12
 				</Link>
 				<Link
 					to={`${props.link}/question/5`}
@@ -55,7 +55,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[4] = true;
 					}}
 				>
-					5
+					9
 				</Link>
 				<Link
 					to={`${props.link}/question/6`}
@@ -65,7 +65,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[5] = true;
 					}}
 				>
-					6
+					10
 				</Link>
 				<Link
 					to={`${props.link}/question/7`}
@@ -75,7 +75,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[6] = true;
 					}}
 				>
-					7
+					11
 				</Link>
 				<Link
 					to={`${props.link}/question/8`}
@@ -85,7 +85,7 @@ class RoundCardsSelection extends React.Component {
 						isClicked[7] = true;
 					}}
 				>
-					8
+					12
 				</Link>
 			</div>
 		);
